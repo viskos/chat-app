@@ -1,4 +1,4 @@
-import {BrowserRouter, HashRouter} from 'react-router-dom'
+import {HashRouter} from 'react-router-dom'
 import AppRouter from './components/AppRouter'
 import Navbar from './components/Navbar'
 import React, {useContext} from "react";
@@ -15,10 +15,10 @@ function App() {
     }
 
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Navbar/>
       <AppRouter/>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 
