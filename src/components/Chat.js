@@ -38,24 +38,27 @@ const Chat = () => {
     }
 
     return (
-        <Container>
             <Grid
                 container
                 justify={"center"}
-                style={{height: window.innerHeight - 50, marginTop: 20}}
+                style={{height: window.innerHeight - 50}}
             >
-                <div ref={chatRef} style={{width: '100%', height: '70vh', border: '1px solid #dadada', overflowY: 'auto'}}>
+                <div ref={chatRef} style={{width: '100%', height: '70vh', overflowY: 'auto'}}>
                     {
                         message.map(message =>
                             <div style={{
                                 margin: 10,
-                                border: user.uid === message.uid ? '1px solid #3CAEA3' : '1px solid #ED553B',
+                                backgroundColor: user.uid === message.uid ? '#2B5279' : '#182633',
+                                color: '#fff',
                                 borderRadius: 5,
                                 marginLeft: user.uid === message.uid ? 'auto' : '10px',
                                 width: 'fit-content',
                                 padding: 10
                             }}>
-                                <Grid container>
+                                <Grid 
+                                    container 
+                                    alignItems={'center'}
+                                >
                                     <Avatar src={message.photoURL}/>
                                     <div>{message.displayName}</div>
                                 </Grid>
@@ -72,9 +75,9 @@ const Chat = () => {
                     container
                     direction={"column"}
                     alignItems={"flex-end"}
-                    style={{width: '100%'}}
+                    style={{width: '100%', backgroundColor: '#17212B'}}
                 >
-                    <form style={{width: '100%'}}>
+                    <form style={{width: '100%'}} >
                         <TextField
                             variant={"outlined"}
                             label={'Enter message'}
@@ -83,12 +86,19 @@ const Chat = () => {
                             value={value}
                             onChange={(e) => setValue(e.target.value)}
                             autoFocus
+                            style={{color: '#fff', borderColor: '#fff'}}
                         />
-                        <Button type={"submit"} onClick={sendMessage} variant={"outlined"}>Send</Button>
+                        <Button 
+                            type={"submit"}
+                            color="default"
+                            onClick={sendMessage}
+                            variant={"outlined"}
+                        >
+                            Send
+                        </Button>
                     </form>
                 </Grid>
             </Grid>
-        </Container>
     )
 }
 
