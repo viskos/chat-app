@@ -33,7 +33,10 @@ const Chat = () => {
             image: base64Files,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
         })
+        alert(base64Files.length)
         setValue('')
+        setFiles([])
+        setBase64Files([])
     }
 
     const attachFile = (e) => {
