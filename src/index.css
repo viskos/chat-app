@@ -76,3 +76,14 @@ code {
     transform: translate(24px, 0);
   }
 }
+
+.attach-file {
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: 1px solid white;
+  color: white;
+}
+
+.attach-file input {
+  display: none;
+}
